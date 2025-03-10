@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/pages/styles.css">
+    <link rel="stylesheet" href="/css/all.min.css">
 </head>
 <body>
+    <header>
+        <div class="video-container">
+            <video id="video1" class="bg-video" autoplay muted loop>
+                <source src="/img/video1.mp4" type="video/mp4">
+            </video>
+            <video id="video2" class="bg-video hidden" autoplay muted loop>
+                <source src="/img/video2.mp4" type="video/mp4">
+            </video>
+            <div class="image-background"></div>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="/"><img src="/img/logo.png" alt="logo" class="logo"></a></li>
+                    <li><a href="/pages/Male.html">NAM</a></li>
+                    <li><a href="/pages/Female.html">NỮ</a></li>
+                    <li><a href="/pages/Children.html">TRẺ EM</a></li>
+                    <li><a href="/pages/Baby.html">EM BÉ</a></li>
+                    <li><a href="#"><i class="fa-solid fa-heart"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>  
+        <section style="height: 200vh;">
+            <h1>Scroll xuống để thay đổi video</h1>
+        </section>
+        <script>
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
     
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const triggerHeight = window.innerHeight / 2;
+    
+                if (scrollY > triggerHeight) {
+                    video1.classList.add('hidden');
+                    video2.classList.remove('hidden');
+                } else {
+                    video1.classList.remove('hidden');
+                    video2.classList.add('hidden');
+                }
+            });
+        </script>
+    </header>
+
+    <main>
+        <h1>Day là trang Home</h1>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
